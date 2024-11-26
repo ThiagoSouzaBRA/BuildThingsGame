@@ -18,33 +18,55 @@ class ObjectPrototype {
         this.object.rotation.x = this.rotation.x;
         this.object.rotation.y = this.rotation.y;
         this.object.rotation.z = this.rotation.z;
-
+        
     }
 
-    getObject() {
+    getMesh() {
         return this.object;
     }
 
     setPosition(x, y, z) {
-        this.object.position.x = x;
-        this.object.position.y = y;
-        this.object.position.z = z;
+        this.object.position.x = x ?? this.object.position.x;
+        this.object.position.y = y ?? this.object.position.y;
+        this.object.position.z = z ?? this.object.position.z;
         return this;
     }
 
     setRotation(x, y, z) {
-        this.object.rotation.x = x;
-        this.object.rotation.y = y;
-        this.object.rotation.z = z;
+        this.object.rotation.x = x ?? this.object.rotation.x;
+        this.object.rotation.y = y ?? this.object.rotation.y;
+        this.object.rotation.z = z ?? this.object.rotation.z;
         return this;
     }
 
     setColor(color){
         if(!color) return
         this.color = color;
-        this.getObject().material.color.set(color)
+        this.getMesh().material.color.set(color)
         return this;
     }
 
+    setSize(x, y, z){
+        this.scale.x = x ?? this.scale.x;
+        this.scale.y = y ?? this.scale.y;
+        this.scale.z = z ?? this.scale.z;
+        this.object.scale.set(this.scale.x, this.scale.y, this.scale.z)
+        return this;
+    }
+    
+    getPositionVector3(){
+        return new THREE.Vector3(
+            this.object.position.x,
+             this.object.position.y, 
+             this.object.position.z
+            )
+    }
+
+    addForce(x, y, z){
+        let velForce = 1
+        this.object.position.x += x ?? 0
+        this.object.position.y += y ?? 0
+        this.object.position.z += z ?? 0
+    }
 
 }
