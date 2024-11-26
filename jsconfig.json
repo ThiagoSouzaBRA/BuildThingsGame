@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "target": "ES6",             // Suporte para ES6
+      "module": "ESNext",          // Compatível com ES Modules
+      "moduleResolution": "Node", // Resolve módulos como no Node.js
+      "baseUrl": ".",              // Define o diretório base
+      "paths": {                   // Mapeia módulos instalados
+        "three/*": ["node_modules/three/*"]
+      },
+      "allowSyntheticDefaultImports": true, // Permite importação padrão
+      "esModuleInterop": true               // Melhor integração com ES Modules
+    },
+    "include": [
+      "public/src/**/*",           // Inclui os arquivos em ./public/src/
+      "node_modules/three/**/*"    // Inclui definições do Three.js
+    ],
+    "exclude": [
+      "node_modules"               // Exclui node_modules diretamente
+    ]
+  }
+  
