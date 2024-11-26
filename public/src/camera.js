@@ -9,22 +9,20 @@ class Camera {
             100
         );
 
-        log("Camera criada.")
-        
+        this.camera.position.set(0, 0, 15);
+
     }
 
     getObject(){
         return this.camera;
     }
 
-    setPosition(x, y){
-        this.camera.position.x = x;
-        this.camera.position.y = y;
+    setPosition(x, y, z) {
+        this.camera.position.set(x, y, z);
     }
 
-    setRotation(){
-        this.camera.rotation.x = x;
-        this.camera.rotation.y = y;
+    setRotation(x, y, z) {
+        this.camera.rotation.set(x, y, z);
     }
 
 }

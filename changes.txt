@@ -1,0 +1,14 @@
+Future changes:
+
+1- melhorar o gerenciamento do objeto dentro das cenas
+2- melhorar a identificação dos objetos
+3- mecanismo para reconhecer click nos objetos
+4- selecionar com o mouse a face do cubo
+5- movimentação de camera pelo mouse
+6- movimentação do mouse estilo garra (pega e depois arrasta)
+
+
+
+ideia inicial do jogo: fazenda tipo minecraft mas sem um personagem (plantar, esperar crescer, 
+fazer algo com o que plantou - ex: plantei trigo, posso fazer pão)
+plantar arvores para conseguir madeira

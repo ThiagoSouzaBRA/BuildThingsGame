@@ -4,19 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body{
+            background-color: rgb(60, 60, 60);
+        }
+    </style>
 </head>
 <body>
 
     <div id="tela" style="width:800px;height: 800px;">
 
+    Camera<br/>
+    X<input type="range" min="-100" max="1000" id="camX" >
+    Y<input type="range" min="0" max="1000" id="camY">
+    Z<input type="range" min="-100" max="1000" id="camZ">
+
+    <br/><br/>
+
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js"></script>
+    
     <script src="src/utils.js"></script>
+    <script src="src/colors.js"></script>
     <script src="src/camera.js"></script>
+    
     <script src="src/objects/objectPrototype.js"></script>
     <script src="src/objects/light.js"></script>
     <script src="src/objects/cube.js"></script>
-    <script src="src/scene.js"></script>
+    <script src="src/objects/plane.js"></script>
+
+
+    <script src="src/Scenes/SceneCreator.js"></script>
+    <script src="src/Scenes/mainScene.js"></script>
+
     <script  src="src/game.js"></script>
 
 </body>
