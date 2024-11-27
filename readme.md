@@ -1,2 +1,2 @@
 Project Preview
-![Project Preview](images/image.gif)
+![Project Preview](images/images.gif)
