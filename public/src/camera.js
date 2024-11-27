@@ -11,16 +11,18 @@ class Camera {
 
         this.camera.position.set(0, 0, 15);
 
+        this.camera.centerOfRotation = null;
+
     }
 
-    getMesh(){
+    getMesh() {
         return this.camera;
     }
 
-    getPosition(){
+    getPosition() {
         return this.camera.position
     }
-    
+
     setPosition(x, y, z) {
         this.camera.position.set(x, y, z);
     }
@@ -38,4 +40,32 @@ class Camera {
         this.camera.updateProjectionMatrix(); // Atualiza a matriz de projeção
     }
 
+    addForce(x, y, z) {
+        let velForce = 1
+        this.camera.position.x += x ?? 0
+        this.camera.position.y += y ?? 0
+        this.camera.position.z += z ?? 0
+    }
+
+    zoomMouse(delta, centerOfRotation, zoomSpeed = 0.1) {
+        const direction = new THREE.Vector3();
+        direction.copy(this.camera.position).sub(centerOfRotation).normalize();
+
+        // Ajusta a posição da câmera com base na direção e no zoom
+        const deltaZoom = delta * zoomSpeed;
+        this.camera.position.addScaledVector(direction, deltaZoom);
+
+        // Mantém a câmera apontando para o centro de rotação
+        this.camera.lookAt(centerOfRotation);
+        this.camera.updateProjectionMatrix();
+        this.camera.centerOfRotation = centerOfRotation
+    }
+
+    setCenterOfRotation(object) {
+        this.camera.centerOfRotation = object;
+    }
+
+    getCenterOfRotation() {
+        return this.camera.centerOfRotation
+    }
 }

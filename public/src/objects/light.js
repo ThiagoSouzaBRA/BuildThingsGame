@@ -1,7 +1,7 @@
 class Light extends ObjectPrototype {
     constructor(x = 0, y = 0, z = 0, rX = 0, rY = 0, rZ = 0) {
 
-        const color = Colors.YELLOW
+        const color = Colors.WHITE
         const intensity = 0.8;
         const object = new THREE.DirectionalLight(color, intensity)
         super(object, x, y, z, rX, rY, rZ, color)
